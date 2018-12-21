@@ -1,7 +1,7 @@
 {
-  "name": "grafana-azure-monitor-datasource",
+  "name": "grafana-rss-panel",
   "version": "1.0.0",
-  "description": "Grafana data source for Azure Monitor/Application Insights",
+  "description": "Grafana RSS Panel",
   "scripts": {
     "build": "node --max-old-space-size=8192 ./node_modules/.bin/webpack --config webpack.config.prod.js",
     "dev": "webpack --mode development",
@@ -11,6 +11,7 @@
   "author": "Grafana Labs",
   "license": "Apache",
   "dependencies": {
+    "@grafana/ui": "1.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.2.0",

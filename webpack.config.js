@@ -9,7 +9,7 @@ module.exports = {
 	},
   context: path.join(__dirname, 'src'),
   entry: {
-    'module': './module.ts',
+    'module': './module.tsx',
 	},
   devtool: 'source-map',
   output: {
@@ -18,7 +18,7 @@ module.exports = {
     libraryTarget: 'amd'
   },
   externals: [
-    'lodash', 'moment', 'grafana-ui',
+    'lodash', 'moment', '@grafana/ui',
     function(context, request, callback) {
       var prefix = 'grafana/';
       if (request.indexOf(prefix) === 0) {

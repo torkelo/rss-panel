@@ -1,9 +1,9 @@
-import { Google } from 'grafana-ui';
+import { DeleteButton } from '@grafana/ui';
 
 describe("test", () => {
 
   it("should work", () => {
-    expect(new Google().hello()).toBe("hello");
+    expect(DeleteButton).toBe(null);
   });
 
 });
