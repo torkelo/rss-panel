@@ -87,9 +87,9 @@ define(["@grafana/ui"], function(__WEBPACK_EXTERNAL_MODULE__grafana_ui__) { retu
 /******/ ({
 
 /***/ "../../../../node_modules/object-assign/index.js":
-/*!**********************************************************************************************!*\
-  !*** /home/torkel/dev/go/src/github.com/grafana/grafana/node_modules/object-assign/index.js ***!
-  \**********************************************************************************************/
+/*!************************************************************************************************!*\
+  !*** /Users/torkelo/dev/go/src/github.com/grafana/grafana/node_modules/object-assign/index.js ***!
+  \************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -189,9 +189,9 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 /***/ }),
 
 /***/ "../../../../node_modules/prop-types/checkPropTypes.js":
-/*!****************************************************************************************************!*\
-  !*** /home/torkel/dev/go/src/github.com/grafana/grafana/node_modules/prop-types/checkPropTypes.js ***!
-  \****************************************************************************************************/
+/*!******************************************************************************************************!*\
+  !*** /Users/torkelo/dev/go/src/github.com/grafana/grafana/node_modules/prop-types/checkPropTypes.js ***!
+  \******************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -292,9 +292,9 @@ module.exports = checkPropTypes;
 /***/ }),
 
 /***/ "../../../../node_modules/prop-types/lib/ReactPropTypesSecret.js":
-/*!**************************************************************************************************************!*\
-  !*** /home/torkel/dev/go/src/github.com/grafana/grafana/node_modules/prop-types/lib/ReactPropTypesSecret.js ***!
-  \**************************************************************************************************************/
+/*!****************************************************************************************************************!*\
+  !*** /Users/torkelo/dev/go/src/github.com/grafana/grafana/node_modules/prop-types/lib/ReactPropTypesSecret.js ***!
+  \****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -316,9 +316,9 @@ module.exports = ReactPropTypesSecret;
 /***/ }),
 
 /***/ "../../../../node_modules/react/cjs/react.development.js":
-/*!******************************************************************************************************!*\
-  !*** /home/torkel/dev/go/src/github.com/grafana/grafana/node_modules/react/cjs/react.development.js ***!
-  \******************************************************************************************************/
+/*!********************************************************************************************************!*\
+  !*** /Users/torkelo/dev/go/src/github.com/grafana/grafana/node_modules/react/cjs/react.development.js ***!
+  \********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2168,9 +2168,9 @@ module.exports = react;
 /***/ }),
 
 /***/ "../../../../node_modules/react/index.js":
-/*!**************************************************************************************!*\
-  !*** /home/torkel/dev/go/src/github.com/grafana/grafana/node_modules/react/index.js ***!
-  \**************************************************************************************/
+/*!****************************************************************************************!*\
+  !*** /Users/torkelo/dev/go/src/github.com/grafana/grafana/node_modules/react/index.js ***!
+  \****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2238,18 +2238,22 @@ var Panel =
 function (_super) {
   __extends(Panel, _super);
 
-  function Panel() {
-    var _this = _super !== null && _super.apply(this, arguments) || this;
+  function Panel(props) {
+    var _this = _super.call(this, props) || this;
 
     _this.onDelete = function () {
       console.log('delete!');
     };
 
+    _this.state = {
+      loading: _ui.LoadingState.Loading
+    };
     return _this;
   }
 
   Panel.prototype.render = function () {
-    return _react2.default.createElement("div", null, _react2.default.createElement("h2", null, "External panel plugin!"), _react2.default.createElement(_ui.DeleteButton, {
+    var loading = this.state.loading;
+    return _react2.default.createElement("div", null, _react2.default.createElement("h2", null, "External panel plugin!"), _react2.default.createElement("p", null, "loading: ", loading, " "), _react2.default.createElement(_ui.DeleteButton, {
       onConfirm: this.onDelete
     }));
   };

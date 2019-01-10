@@ -18,14 +18,11 @@ module.exports = {
     libraryTarget: 'amd'
   },
   externals: [
-    'lodash', 'moment', '@grafana/ui',
-    function(context, request, callback) {
-      var prefix = 'grafana/';
-      if (request.indexOf(prefix) === 0) {
-        return callback(null, request.substr(prefix.length));
-      }
-      callback();
-    }
+    'lodash',
+    'moment',
+    'react',
+    'react-dom',
+    '@grafana/ui',
   ],
   plugins: [
     new CleanWebpackPlugin('dist', { allowExternal: true }),
