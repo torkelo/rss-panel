@@ -18,7 +18,7 @@
     "noImplicitUseStrict": false,
     "noImplicitAny": false,
     "noUnusedLocals": true,
-    "strictNullChecks": true,
-    "moduleResolution": "node"
-  },
+    "moduleResolution": "node",
+    "typeRoots": ["./node_modules/@types", "types"]
+  }
 }

@@ -1,18 +1,13 @@
 import React, { PureComponent } from 'react';
-import { DeleteButton, LoadingState } from '@grafana/ui';
+import { DeleteButton, PanelProps } from '@grafana/ui';
 
-interface State {
-  loading: LoadingState;
-}
+interface Options {}
+interface Props extends PanelProps<Options> {}
 
-export class Panel extends PureComponent<any, State> {
+export class Panel extends PureComponent<Props > {
 
   constructor(props) {
     super(props);
-
-    this.state = {
-      loading: LoadingState.Loading,
-    };
   }
 
   onDelete = () => {
@@ -20,12 +15,9 @@ export class Panel extends PureComponent<any, State> {
   }
 
   render() {
-    const { loading } = this.state;
-
     return (
       <div>
         <h2>External panel plugin!</h2>
-        <p>loading: {loading} </p>
         <DeleteButton onConfirm={this.onDelete} />
       </div>
     );
